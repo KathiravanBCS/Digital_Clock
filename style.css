@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Poppins:ital,wght@0,400;0,500;0,700;1,300&display=swap');
+
+@font-face {
+    font-family: digital-7;
+    src: url(./digital-7.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --light-color: #ffc312;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #2c3a47;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    gap: 30px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Centering the title */
+h2 {
+    color: #e9d201;
+    font-size: 40px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Frame styling */
+.frame {
+    width: 90%;
+    max-width: 600px;
+    height: 250px;
+    background-color: #111;
+    border: 20px solid #e9d201;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, 
+                rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Clock styling */
+.clock {
+    font-family: digital-7;
+    color: white;
+    text-shadow: 0 0 20px var(--light-color);
+    font-size: 50px;
+    position: relative;
+    text-align: center;
+}
+
+/* Blurred glow effect */
+.clock::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--light-color);
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    filter: blur(40px);
+}
+
+/* Responsive Styles */
+
+/* Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 30px;
+    }
+
+    .frame {
+        height: 200px;
+        border-width: 15px;
+    }
+
+    .clock {
+        font-size: 40px;
+    }
+}
+
+/* Mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    .frame {
+        height: 150px;
+        border-width: 10px;
+    }
+
+    .clock {
+        font-size: 30px;
+    }
+}
